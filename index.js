@@ -67,7 +67,7 @@ app.get("/about", (req, res) => {
 
 app.get("/admin/contacts", (req, res) => {
   // select all contacts order by email
-  const sql = "SELECT * FROM contacts ORDER BY email";
+  const sql = "SELECT message FROM contacts ORDER BY email";
   db.all(sql, [], (err, rows) => {
     if (err) {
       return console.error(err.message);
@@ -80,14 +80,14 @@ app.get("/admin/contacts", (req, res) => {
 
 app.get("/create", (req, res) => {
   res.render("index", {
-    contacts: {}
+    contact: {}
   });
 });
 
 // POST /create
 app.post("/create", (req, res) => {
   // insert contact in table contacts
-  const sql = "";
+  const sql = "INSERT INTO contacts (title, email, message) VALUES (?, ?, ?)";
   const contact = [req.body.title, req.body.email, req.body.message];
   db.run(sql, contact, err => {
     if (err) {
