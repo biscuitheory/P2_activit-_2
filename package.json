@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/lysa21/express_sql_start#readme",
   "dependencies": {
-    "ejs": "^3.0.1",
-    "express": "^4.17.1",
-    "sqlite3": "^4.1.1"
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "sqlite3": "^5.0.8"
   },
   "description": ""
 }
